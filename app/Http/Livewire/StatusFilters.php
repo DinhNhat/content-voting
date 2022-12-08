@@ -17,14 +17,14 @@ class StatusFilters extends Component
     {
         $this->status = $newStatus;
 
-        dd(app('request')->create(url()->previous()));
+        return redirect()->route('idea.index', [
+            'status' => $this->status
+        ]);
 
-        if (app('router')->getRoutes()->match(app('request')->create(url()->previous()))->getName()
-            === 'idea.show') {
-            return redirect()->route('idea.index', [
-                'status' => $this->status
-            ]);
-        }
+//        if (app('router')->getRoutes()->match(app('request')->create(url()->previous()))->getName()
+//            === 'idea.show') {
+//
+//        }
     }
 
     public function mount()
