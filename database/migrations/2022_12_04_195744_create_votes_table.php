@@ -22,12 +22,12 @@ class CreateVotesTable extends Migration
             $table->foreign('idea_id')
                 ->references('id')
                 ->on('ideas')
-                ->nullOnDelete()
+                ->restrictOnDelete()
                 ->cascadeOnUpdate();
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
-                ->nullOnDelete()
+                ->restrictOnDelete()
                 ->cascadeOnUpdate();
             $table->timestamps();
         });

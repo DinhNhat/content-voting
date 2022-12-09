@@ -25,17 +25,17 @@ class CreateIdeasTable extends Migration
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
-                ->nullOnDelete()
+                ->restrictOnDelete()
                 ->cascadeOnUpdate();
             $table->foreign('category_id')
                 ->references('id')
                 ->on('categories')
-                ->nullOnDelete()
+                ->restrictOnDelete()
                 ->cascadeOnUpdate();
             $table->foreign('status_id')
                 ->references('id')
                 ->on('statuses')
-                ->nullOnDelete()
+                ->restrictOnDelete()
                 ->cascadeOnUpdate();
             $table->timestamps();
         });
