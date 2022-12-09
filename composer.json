@@ -14,8 +14,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.10",
-        "nesbot/carbon": "^2.64",
-        "ralphjsmit/livewire-urls": "^1.1"
+        "nesbot/carbon": "^2.64"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.7",
