@@ -2,36 +2,45 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Idea;
+use App\Models\Status;
 use Illuminate\Support\Facades\Route;
 use Livewire\Component;
+use RalphJSmit\Livewire\Urls\Facades\Url;
 
 class StatusFilters extends Component
 {
-    public $status = 'All';
+    public $status;
+    public $statusCount;
 
     protected $queryString = [
-        'status'
+        'status',
     ];
 
     public function setStatus($newStatus)
     {
         $this->status = $newStatus;
+        $this->emit('queryStringUpdatedStatus', $this->status);
 
-        return redirect()->route('idea.index', [
-            'status' => $this->status
-        ]);
+        // URL string modification
+//        $previousUrl = url()->previous();
+//        $queryStringPosition = stripos($previousUrl, '?');
+//        $urlWithoutQueryString = mb_substr($previousUrl, 0, $queryStringPosition);
 
-//        if (app('router')->getRoutes()->match(app('request')->create(url()->previous()))->getName()
-//            === 'idea.show') {
-//
-//        }
+        if (Url::currentRoute() === 'idea.show') {
+            return redirect()->route('idea.index', [
+                'status' => $this->status
+            ]);
+        }
     }
 
     public function mount()
     {
-        if (Route::currentRouteName() == 'idea.show') {
+        // Get all the idea status count
+        $this->statusCount = Status::getCount();
+
+        if (Route::currentRouteName() === 'idea.show') {
             $this->status = null;
-            $this->queryString = [];
         }
     }
 
@@ -39,4 +48,9 @@ class StatusFilters extends Component
     {
         return view('livewire.status-filters');
     }
+
+//    private function getPreviousRouteName()
+//    {
+//        return app('router')->getRoutes()->match(app('request')->create(url()->previous()))->getName();
+//    }
 }
