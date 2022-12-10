@@ -112,7 +112,7 @@
             </div>
         </main>
 
-        {{-- @livewireScripts --}}
-        <script src="{{ asset('vendor/livewire/livewire.js') }}" defer></script>
+        @livewireScripts
+        {{-- <script src="{{ asset('vendor/livewire/livewire.js') }}" defer></script> --}}
     </body>
 </html>
