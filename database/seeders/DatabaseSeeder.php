@@ -20,8 +20,6 @@ class DatabaseSeeder extends Seeder
     {
         User::factory()->count(20)->create();
 
-        Idea::factory()->count(100)->create();
-
         Category::factory()->create(['name' => 'Category 1']);
         Category::factory()->create(['name' => 'Category 2']);
         Category::factory()->create(['name' => 'Category 3']);
@@ -32,6 +30,8 @@ class DatabaseSeeder extends Seeder
         Status::factory()->create(['name' => 'In Progress']);
         Status::factory()->create(['name' => 'Implemented']);
         Status::factory()->create(['name' => 'Closed']);
+
+        Idea::factory()->count(100)->create();
 
         // Generate unique votes. Ensure idea_id and user_id are unique for each row
         foreach (range(1, 20) as $userId) {
