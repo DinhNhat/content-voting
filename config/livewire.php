@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'asset_url' => 'http://localhost/laracast-voting/public',
+    'asset_url' => 'https://natdev.digital',
 
     /*
     |--------------------------------------------------------------------------
@@ -68,7 +68,7 @@ return [
     |
     */
 
-    'app_url' => 'http://localhost/laracast-voting/public',
+    'app_url' => 'https://natdev.digital',
 
     /*
     |--------------------------------------------------------------------------
