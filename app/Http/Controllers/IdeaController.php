@@ -7,6 +7,7 @@ use App\Http\Requests\StoreIdeaRequest;
 use App\Http\Requests\UpdateIdeaRequest;
 use App\Models\Vote;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class IdeaController extends Controller
@@ -16,8 +17,9 @@ class IdeaController extends Controller
      *
      * @return View
      */
-    public function index()
+    public function index(Request $request)
     {
+
         return view('idea.index');
     }
 

@@ -16,8 +16,8 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
-        <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
     </head>
+
     <body class="font-sans bg-gray-background text-gray-900">
         <header class="flex flex-col md:flex-row items-center justify-between px-8 py-4">
             <a href="{{ url('/') }}"><img src="{{ asset('img/logo.svg') }}" alt="logo"></a>
@@ -112,9 +112,9 @@
                 </div>
             </div>
         </main>
-        
-        <script type="text/javascript" src="{{ asset('vendor/livewire/livewire.js') }}"></script>
+
+{{--        <script type="text/javascript" src="{{ asset('vendor/livewire/livewire.js') }}"></script>--}}
         @livewireScripts
-        {{-- <script src="{{ asset('vendor/livewire/livewire.js') }}" defer></script> --}}
+         <script src="{{ asset('js/main.js') }}"></script>
     </body>
 </html>

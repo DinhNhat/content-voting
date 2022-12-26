@@ -1,5 +1,9 @@
 <div
     x-data
+    @click="const target = $event.target.tagName.toLowerCase()
+    const ignores = ['button','svg','path','a', 'img']
+    const ideaLink = $event.target.closest('.idea-container').querySelector('.idea-link')
+    !ignores.includes(target) && ideaLink.click()"
     class="idea-container hover:shadow-card
     transition duration-150 ease-in bg-white
     rounded-xl flex cursor-pointer"

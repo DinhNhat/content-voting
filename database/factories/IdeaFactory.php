@@ -21,6 +21,7 @@ class IdeaFactory extends Factory
             'status_id' => $this->faker->numberBetween(1, 5),
             'title' => ucwords($this->faker->words(4, true)),
             'description' => $this->faker->paragraphs(5, true),
+            'created_at' => $this->faker->dateTimeThisYear('+2 months')
         ];
     }
 }

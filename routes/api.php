@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/test/ideas', [\App\Http\Controllers\Test\Api\IdeaApiTestController::class, 'index']);
+
+Route::apiResource('/ideas', \App\Http\Controllers\Api\IdeaApiController::class);
+Route::get('/statuses', \App\Http\Controllers\Api\StatusApiController::class);
+Route::get('/categories', \App\Http\Controllers\Api\CategoryApiController::class);
