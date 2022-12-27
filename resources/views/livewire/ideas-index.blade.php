@@ -30,7 +30,7 @@
     <div class="ideas-container space-y-6 my-6">
 
         @foreach ($ideas as $idea)
-            <livewire:idea-index-test
+            <livewire:idea-index
                 :key="$idea->key"
                 :idea="$idea"
                 :votesCount="$idea->votes_count"

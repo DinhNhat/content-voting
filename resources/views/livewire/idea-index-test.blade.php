@@ -2,7 +2,6 @@
     class="idea-container hover:shadow-card
     transition duration-150 ease-in bg-whiteidea-container
     rounded-xl flex cursor-pointer"
-    onClick="clickableIdeaContainer(this)"
 >
     <div class="hidden md:block border-r border-gray-100 px-5 py-8">
         <div class="text-center">
