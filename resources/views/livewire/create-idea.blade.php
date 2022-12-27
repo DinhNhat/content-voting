@@ -49,9 +49,7 @@
 
     <div>
         @if (session('success_message'))
-            <div
-                class="text-green mt-4"
-            >
+            <div class="text-green mt-4">
                 {{ session('success_message') }}
             </div>
         @endif
