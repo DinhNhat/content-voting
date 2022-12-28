@@ -106,17 +106,16 @@
         </div>
 
         <div class="w-full px-2 md:px-0 md:w-175">
-            <livewire:status-filters />
+            <livewire:status-filters-test />
 
-            <div class="mt-8">
-                {{ $slot }}
-            </div>
+{{--            <div class="mt-8">--}}
+{{--                {{ $slot }}--}}
+{{--            </div>--}}
         </div>
     </main>
 
     <script type="text/javascript" src="{{ asset('vendor/livewire/livewire.js') }}"></script>
     @livewireScripts()
-{{--    <script src="{{ asset('js/main.js') }}"></script>--}}
 
     @stack('page-script')
 </body>
