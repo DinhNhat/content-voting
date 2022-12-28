@@ -1,6 +1,6 @@
-<x-app-layout>
+<x-test.master-layout>
     <div>
-        <a href="{{ url('/') }}" class="flex items-center font-semibold hover:underline">
+        <a href="{{ url('/test/ideas') }}" class="flex items-center font-semibold hover:underline">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
@@ -9,7 +9,7 @@
         </a>
     </div>
 
-    <livewire:idea-show :idea="$idea" :votesCount="$votesCount" />
+    <livewire:idea-show-test :idea="$idea" :votesCount="$votesCount" />
 
     <div class="comments-container relative space-y-6 md:ml-22 pt-6 my-8 mt-1">
         <div class="comment-container relative bg-white rounded-xl flex mt-4">
@@ -31,9 +31,8 @@
                             <div class="">10 hours ago</div>
                             <div>&bull;</div>
                         </div>
-                        <div x-data="{ isOpen: false }" class="flex items-center space-x-2">
+                        <div class="flex items-center space-x-2">
                             <button
-                                @click="isOpen = !isOpen"
                                 class="relative bg-gray-100 hover:bg-gray-200 border rounded-full h-7
                                     transition duration-150 ease-in py-2 px-3"
                             >
@@ -41,12 +40,7 @@
                                     <path d="M2.97.061A2.969 2.969 0 000 3.031 2.968 2.968 0 002.97 6a2.97 2.97 0 100-5.94zm9.184 0a2.97 2.97 0 100 5.939 2.97 2.97 0 100-5.939zm8.877 0a2.97 2.97 0 10-.003 5.94A2.97 2.97 0 0021.03.06z" style="color: rgba(163, 163, 163, .5)" >
                                 </svg>
                                 <ul
-                                    x-transition.origin.top.left
-                                    x-cloak
-                                    x-show="isOpen"
-                                    @click.away="isOpen = false"
-                                    @keydown.escape.window="isOpen = false"
-                                    class="absolute z-10 w-44 text-left font-semibold bg-white
+                                    class="hidden absolute z-10 w-44 text-left font-semibold bg-white
                                     shadow-dialog rounded-xl py-3 md:ml-8 top-8 md:top-6 right-0 md:left-0"
                                 >
                                     <li><a href="#" class="hover:bg-gray-100 block transition duration-150 ease-in px-5 py-3">Mark As Spam</a></li>
@@ -148,4 +142,10 @@
             </div>
         </div><!-- end comment-container -->
     </div><!-- end comments-container -->
-</x-app-layout>
+
+    @prepend('page-script')
+        <script>
+            console.log('Inside idea show page');
+        </script>
+    @endprepend
+</x-test.master-layout>

@@ -18,5 +18,6 @@ Route::get('/', [IdeaController::class, 'index'])->name('idea.index');
 Route::get('/ideas/{idea:slug}',[IdeaController::class, 'show'])->name('idea.show');
 
 Route::get('/test/ideas', [\App\Http\Controllers\Test\IdeaTestController::class, 'index']);
+Route::get('/test/ideas/{idea:slug}', [\App\Http\Controllers\Test\IdeaTestController::class, 'show'])->name('idea.show-test');
 
 require __DIR__.'/auth.php';
