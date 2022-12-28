@@ -18,17 +18,10 @@ function toggleSpamDialog(event) {
     event.querySelector('.spam-dialog').classList.toggle("hidden");
 }
 
-function toggleReplyForm(event) {
-    event.querySelector('.reply-form').classList.toggle("hidden");
-}
-
-function toggleSetStatusForm(event) {
-    event.querySelector('.set-status-form').classList.toggle("hidden");
-}
 
 function togglePostCommentForm() {
-    const postCommentFormElement = document.getElementById("post-comment-form");
-    postCommentFormElement.classList.toggle("hidden");
+    const postCommentForm = document.querySelector("#post-comment-form");
+    postCommentForm.classList.toggle("hidden");
 }
 
 function toggleSetStatusForm() {
