@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        @livewireStyles
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @livewireStyles
 
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-    </head>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+</head>
 
-    <body class="font-sans bg-gray-background text-gray-900">
-        <header class="flex flex-col md:flex-row items-center justify-between px-8 py-4">
+<body class="font-sans bg-gray-background text-gray-900">
+    <header class="flex flex-col md:flex-row items-center justify-between px-8 py-4">
             <a href="{{ url('/') }}"><img src="{{ asset('img/logo.svg') }}" alt="logo"></a>
 
             <div class="flex items-center mt-2 md:mt-0">
@@ -51,10 +51,10 @@
                          class="w-10 h-10 rounded-full">
                 </a>
             </div>
-        </header>
+    </header>
 
-        <main class="container mx-auto max-w-custom flex flex-col md:flex-row" style="max-width: 1000px">
-            <div class="w-70 mx-auto md:mx-0 md:mr-5">
+    <main class="container mx-auto max-w-custom flex flex-col md:flex-row" style="max-width: 1000px">
+        <div class="w-70 mx-auto md:mx-0 md:mr-5">
                 <div
                     class="bg-white md:sticky md:top-8 border-2 border-blue rounded-xl mt-16"
                     style="
@@ -102,19 +102,18 @@
                     @endauth
 
                 </div>
-            </div>
+        </div>
 
-            <div class="w-full px-2 md:px-0 md:w-175">
+        <div class="w-full px-2 md:px-0 md:w-175">
                 <livewire:status-filters />
 
                 <div class="mt-8">
                     {{ $slot }}
                 </div>
-            </div>
-        </main>
+        </div>
+    </main>
 
-        <script type="text/javascript" src="{{ asset('vendor/livewire/livewire.js') }}"></script>
-        @livewireScripts
-{{--        <script src="{{ asset('js/main.js') }}"></script>--}}
-    </body>
+    <script type="text/javascript" src="{{ asset('vendor/livewire/livewire.js') }}"></script>
+    @livewireScripts
+</body>
 </html>
