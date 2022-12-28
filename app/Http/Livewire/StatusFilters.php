@@ -30,8 +30,8 @@ class StatusFilters extends Component
 //        $queryStringPosition = stripos($previousUrl, '?');
 //        $urlWithoutQueryString = mb_substr($previousUrl, 0, $queryStringPosition);
 
-        if ($this->currentRouteName === 'idea.show') {
-            return redirect()->route('idea.index', [
+        if ($this->currentRouteName === 'idea.show-test') {
+            return redirect()->route('idea.index-test', [
                 'status' => $this->status
             ]);
         }
@@ -45,7 +45,7 @@ class StatusFilters extends Component
         // Get all the idea status count
         $this->statusCount = Status::getCount();
 
-        if (Route::currentRouteName() === 'idea.show') {
+        if (Route::currentRouteName() === 'idea.show-test') {
             $this->status = null;
         }
     }
