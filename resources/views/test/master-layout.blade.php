@@ -115,7 +115,7 @@
     </main>
 
     <script type="text/javascript" src="{{ asset('vendor/livewire/livewire.js') }}"></script>
-    @livewireScripts(['nonce' => csp_nonce()])
+    @livewireScripts()
 {{--    <script src="{{ asset('js/main.js') }}"></script>--}}
 
     @stack('page-script')
