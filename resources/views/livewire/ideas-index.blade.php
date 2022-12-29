@@ -32,6 +32,7 @@
                 :key="$idea->key"
                 :idea="$idea"
                 :votesCount="$idea->votes_count"
+                :search="$search"
             />
         @empty
             <div class="mx-auto w-70 mt-12">

@@ -13,14 +13,14 @@ class IdeaIndex extends Component
     public $idea;
     public $votesCount;
     public $hasVoted;
-//    public $search;
+    public $search;
 
-    public function mount(Idea $idea, $votesCount)
+    public function mount(Idea $idea, $votesCount, $search)
     {
         $this->idea = $idea;
         $this->votesCount = $votesCount;
         $this->hasVoted = $idea->voted_by_user;
-//        $this->search = $this->doesIdeaTitleContainSearch($this->idea->title, $search);
+        $this->search = $this->doesIdeaTitleContainSearch($this->idea->title, $search);
     }
 
     public function vote()
@@ -45,15 +45,15 @@ class IdeaIndex extends Component
         return view('livewire.idea-index');
     }
 
-//    private function doesIdeaTitleContainSearch($title, $search) {
-//        if ($search && strlen($search) >= 3) {
-//            if (Helper::getSubString($title, $search)) {
-//                $cssText = 'bg-peach text-peach';
-//                $subStrSearch = Helper::getSubString($title, $search);
-////                return '<span class="bg-peach text-peach">'.$subStrSearch.'</span>';
-//                return $subStrSearch;
-//            }
-//        }
-//        return '';
-//    }
+    private function doesIdeaTitleContainSearch($title, $search) {
+        if ($search && strlen($search) >= 3) {
+            if (Helper::getSubString($title, $search)) {
+                $cssText = 'bg-peach text-peach';
+                $subStrSearch = Helper::getSubString($title, $search);
+//                return '<span class="bg-peach text-peach">'.$subStrSearch.'</span>';
+                return $subStrSearch;
+            }
+        }
+        return '';
+    }
 }
