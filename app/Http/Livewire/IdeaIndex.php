@@ -54,6 +54,5 @@ class IdeaIndex extends Component
                 return $subStrSearch;
             }
         }
-        return '';
     }
 }
