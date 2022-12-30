@@ -45,11 +45,16 @@
                     </div>
                 @endif
 
-                <a href="#">
-                    <img src="https://www.gravatar.com/avatar/0000000000000000000000000000000000?d=mp"
-                         alt="avatar"
-                         class="w-10 h-10 rounded-full">
-                </a>
+                <div class="relative" id="avatar-profile">
+                    <a href="#">
+                        <img src="https://www.gravatar.com/avatar/0000000000000000000000000000000000?d=mp"
+                             alt="avatar"
+                             class="w-10 h-10 rounded-full">
+                    </a>
+                    @auth
+                        <span class="tooltip-user-email">{{ \Illuminate\Support\Facades\Auth::user()->email }}</span>
+                    @endauth
+                </div>
             </div>
     </header>
 

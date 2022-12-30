@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Idea;
 use App\Models\Status;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Livewire\Component;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -21,7 +22,11 @@ class SetStatus extends Component
 
     public function setStatus()
     {
-        if (! Auth::check() || ! Auth::user()->isAdmin()) {
+//        if (! Auth::check() || ! Auth::user()->isAdmin()) {
+//            abort(Response::HTTP_FORBIDDEN);
+//        }
+        // Call the gate update idea status authorization
+        if (Gate::denies('update-idea-status')) {
             abort(Response::HTTP_FORBIDDEN);
         }
 

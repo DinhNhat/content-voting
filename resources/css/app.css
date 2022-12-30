@@ -78,3 +78,23 @@
 	@apply bg-red text-white
 }
 
+.tooltip-user-email {
+    visibility: hidden;
+    width: auto;
+    background-color: #EEE8AA;
+    color: #008B8B;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 50px;
+    right: 10%;
+}
+
+#avatar-profile:hover .tooltip-user-email {
+    visibility: visible;
+}
+
