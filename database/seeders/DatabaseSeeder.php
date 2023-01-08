@@ -18,7 +18,31 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(20)->create();
+        User::factory()->create([
+            'name' => 'Nhat Dinh Nguyen',
+            'email' => 'nhat@yahoo.ca',
+            'password' => 'nhat123#'
+        ]);
+
+        User::factory()->create([
+            'name' => 'Kitty',
+            'email' => 'kitty@yahoo.ca',
+            'password' => 'kitty123#'
+        ]);
+
+        User::factory()->create([
+            'name' => 'Ngoc Minh',
+            'email' => 'minh@gmail.com',
+            'password' => 'minh123#'
+        ]);
+
+        User::factory()->create([
+            'name' => 'Duc Cong Nguyen',
+            'email' => 'duccong@gmail.com',
+            'password' => 'cong123#'
+        ]);
+
+        User::factory()->count(16)->create();
 
         Category::factory()->create(['name' => 'Category 1']);
         Category::factory()->create(['name' => 'Category 2']);

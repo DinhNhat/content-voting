@@ -58,7 +58,10 @@
                         </div>
                         <div>
                             <select wire:model.defer="category" name="category_add" id="category_add" class="w-full text-sm bg-gray-100 rounded-xl border-none px-4 py-2">
-                                <option value="1">Category 1</option>
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+
                             </select>
                         </div>
                         @error('category')

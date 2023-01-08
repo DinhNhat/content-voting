@@ -9,6 +9,17 @@ module.exports = {
     ],
 
     theme: {
+        colors: {
+            'gray': {
+                400: '#a3a3a3',
+                500: '#6b7280',
+                600: '#4b5563'
+            },
+            'indigo': {
+                200: '#c7d2fe',
+                300: '#a5b4fc'
+            }
+        },
         extend: {
             colors: {
                 transparent: colors.transparent,
