@@ -2,9 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Jobs\NotifyAllVoters;
 use App\Models\Idea;
 use App\Models\Status;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Livewire\Component;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,6 +13,7 @@ class SetStatus extends Component
 {
     public $idea;
     public $status;
+    public $notifyAllVoters;
 
     public function mount(Idea $idea)
     {
@@ -34,6 +35,10 @@ class SetStatus extends Component
         $this->idea->status_id = $this->status;
         $this->idea->save();
 
+        if ($this->notifyAllVoters) {
+            NotifyAllVoters::dispatch($this->idea);
+        }
+
         // emit the event to parent UI
         $this->emit('statusWasUpdated');
     }
@@ -44,4 +49,6 @@ class SetStatus extends Component
             'statuses' => Status::getCount()
         ]);
     }
+
+
 }
