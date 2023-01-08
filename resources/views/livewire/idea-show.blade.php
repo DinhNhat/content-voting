@@ -52,7 +52,7 @@
                                 <li>
                                     <a
                                         href="#"
-                                        @click="
+                                        @click.prevent="
                                             isOpen = false
                                             $dispatch('custom-show-edit-modal')
                                         "

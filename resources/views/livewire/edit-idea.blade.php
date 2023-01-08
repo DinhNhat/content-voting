@@ -19,21 +19,22 @@
         From: "opacity-100"
         To: "opacity-0"
     -->
-    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+    <div
+        x-show.transition.opacity="isOpen"
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        aria-hidden="true">
+    </div>
 
     <div class="fixed inset-0 z-10 overflow-y-auto">
         <div class="flex items-end justify-center min-h-screen">
-            <!--
-              Modal panel, show/hide based on modal state.
 
-              Entering: "ease-out duration-300"
-                From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                To: "opacity-100 translate-y-0 sm:scale-100"
-              Leaving: "ease-in duration-200"
-                From: "opacity-100 translate-y-0 sm:scale-100"
-                To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            -->
-            <div class="modal relative transform transition-all overflow-hidden rounded-tl-xl rounded-tr-xl bg-white py-4 sm:w-full sm:max-w-lg">
+            <div
+                x-show="isOpen"
+                x-transition.origin.bottom.duration.300ms.ease-in-out
+                @click.away="isOpen = false"
+                class="modal relative transform transition-all overflow-hidden
+                rounded-tl-xl rounded-tr-xl bg-white py-4 sm:w-full sm:max-w-lg"
+            >
                 <div class="absolute top-0 right-0 pt-4 pr-4">
                     <button
                         @click="isOpen = false"
