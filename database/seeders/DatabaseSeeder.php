@@ -19,27 +19,27 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::factory()->create([
-            'name' => 'Nhat Dinh Nguyen',
+            'name' => 'Nhat',
             'email' => 'nhat@yahoo.ca',
-            'password' => 'nhat123#'
+            'password' => '$2y$10$6q4ajxbVmHTQoA4yeSfZhO8h0BZQC3oGDsO1nnut55A5w5wJYLqdi'
         ]);
 
         User::factory()->create([
             'name' => 'Kitty',
             'email' => 'kitty@yahoo.ca',
-            'password' => 'kitty123#'
+            'password' => '$2y$10$0vSiaDVbASHyCliEojcx2eoVDWC3LsUmTklck5r9aykYO9B1Zda5G'
         ]);
 
         User::factory()->create([
             'name' => 'Ngoc Minh',
-            'email' => 'minh@gmail.com',
-            'password' => 'minh123#'
+            'email' => 'minh_cho@gmail.com',
+            'password' => '$2y$10$iWMEcG5z2beSCStC8GCc7u3a0YugMonBVocVXisxPHNZUg/nqz756'
         ]);
 
         User::factory()->create([
             'name' => 'Duc Cong Nguyen',
             'email' => 'duccong@gmail.com',
-            'password' => 'cong123#'
+            'password' => '$2y$10$TL/dVvU/.Dbu9cYAUSYyQOkhaZkZWV8feAm1ctT0iWUBkdaXyFcB6'
         ]);
 
         User::factory()->count(16)->create();

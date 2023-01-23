@@ -20,8 +20,8 @@ Route::apiResource('/ideas', \App\Http\Controllers\Api\IdeaApiController::class)
 Route::get('/statuses', \App\Http\Controllers\Api\StatusApiController::class);
 Route::get('/categories', \App\Http\Controllers\Api\CategoryApiController::class);
 
-Route::get('test/hashed-pass', function(Request $request) {
-    $hashedPass = \Illuminate\Support\Facades\Hash::make($request->query('pass'));
+Route::post('test/hashed-pass', function(Request $request) {
+    $hashedPass = \Illuminate\Support\Facades\Hash::make($request->input('pass'));
     return response()->json([
         'success' => true,
         'message' => 'Get hashed pass',
