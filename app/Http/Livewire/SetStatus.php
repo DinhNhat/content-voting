@@ -40,7 +40,7 @@ class SetStatus extends Component
         }
 
         // emit the event to parent UI
-        $this->emit('statusWasUpdated');
+        $this->emit('statusWasUpdated', 'Idea status was updated successfully!');
     }
 
     public function render()

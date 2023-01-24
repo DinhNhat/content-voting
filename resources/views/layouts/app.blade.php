@@ -118,6 +118,14 @@
         </div>
     </main>
 
+    <!-- Notificatio messgae -->
+    @if (session('success_message'))
+        <x-notification-success
+            :redirect="true"
+            message-to-display="{{ session('success_message') }}"
+        />
+    @endif
+
     <script type="text/javascript" src="{{ asset('vendor/livewire/livewire.js') }}"></script>
     @livewireScripts
 </body>

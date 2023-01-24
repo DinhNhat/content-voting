@@ -46,7 +46,7 @@ class EditIdea extends Component
         ]);
 
         // emit the event to parent UI
-        $this->emit('ideaWasUpdated');
+        $this->emit('ideaWasUpdated', 'Idea was updated successfully!');
     }
 
     public function render()
