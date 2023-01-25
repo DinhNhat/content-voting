@@ -28,7 +28,6 @@
             </div>
         </div>
     </div> <!-- end filters -->
-
     <div class="ideas-container space-y-6 my-6">
         @forelse ($ideas as $idea)
             <livewire:idea-index

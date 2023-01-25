@@ -8,6 +8,7 @@ use Livewire\Component;
 class IdeaComment extends Component
 {
     public $comment;
+    public $ideaUserId;
 
     public function mount(Comment $comment)
     {
