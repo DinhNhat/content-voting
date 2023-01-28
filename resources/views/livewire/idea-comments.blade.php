@@ -8,6 +8,10 @@
                 )
             @endforeach
         </div><!-- end comments-container -->
+
+        <div class="my-8 md:ml-22">
+            {{ $comments->onEachSide(1)->links() }}
+        </div>
     @else
         <div class="mx-auto w-70 mt-12">
             <img src="https://raw.githubusercontent.com/laracasts/lc-voting/8fa083a3b8034e90b3c05b2d8e569e30721ac7d8/public/img/no-ideas.svg"

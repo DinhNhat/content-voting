@@ -11,6 +11,7 @@ class IdeaShow extends Component
     public $idea;
     public $votesCount;
     public $hasVoted;
+    public $commentsCount;
 
     protected $listeners = [
         'statusWasUpdated',
@@ -20,11 +21,12 @@ class IdeaShow extends Component
         'commentWasAdded'
     ];
 
-    public function mount(Idea $idea, $votesCount)
+    public function mount(Idea $idea, $votesCount, $commentsCount)
     {
         $this->idea = $idea;
         $this->votesCount = $votesCount;
         $this->hasVoted = $idea->isVotedByUser(Auth::user());
+        $this->commentsCount = $commentsCount;
     }
 
     public function statusWasUpdated()
